@@ -1,0 +1,81 @@
+/* Form */
+
+.form {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--gap-16) var(--gap-24);
+}
+
+/* Group */
+
+.group {
+  grid-column: span 3;
+}
+
+/* Button */
+
+.button {
+  margin-top: var(--gap-8)
+}
+
+/* Response */
+
+.response {
+  composes: group;
+
+  position: absolute;
+  top: calc(100% + var(--gap-16));
+  left: 0;
+
+  max-width: 100%;
+}
+
+.success-response {
+  composes: response;
+
+  color: var(--color-success-40);
+}
+
+.error-response {
+  composes: response;
+
+  color: var(--color-danger-30);
+}
+
+/* Modal */
+
+.modal {
+  width: 30rem;
+
+  padding: var(--gap-32);
+
+  background: var(--color-secondary-20);
+
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, .08), 13px 13px 30px rgba(0, 0, 0, .16);
+  border-radius: 1rem;
+}
+
+.modal-heading {
+  margin-top: 0;
+  margin-bottom: var(--gap-24);
+
+  font-family: var(--ff-display);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+}
+
+/* Layout */
+
+.inline-layout .button {
+  grid-column: span 2;
+}
+
+.modal-layout .button {
+  grid-column: span 3;
+}
+
+.modal-layout .response {
+  position: static;
+}

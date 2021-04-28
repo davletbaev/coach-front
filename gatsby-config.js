@@ -1,36 +1,70 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: 'Gatsby Default Starter',
+    description: 'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
+    author: '@gatsbyjs',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-postcss',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-wordpress',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        url:
+          process.env.WPGRAPHQL_URL ||
+          'http://localhost:9000/graphql',
+        schema: {
+          typePrefix: 'Wp',
+        },
+        develop: {
+          hardCacheMediaFiles: true,
+        },
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-polyfill-io',
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        features: [ 'smoothscroll' ],
       },
     },
-    `gatsby-plugin-gatsby-cloud`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-minify-classnames',
+      options: {
+        dictionary: 'bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ0123456789',
+        enableOnDevelopment: false,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        custom: {
+          families: [ 'Yeseva One', 'Helvetica Neue' ],
+          urls: [ '/fonts/fonts.css' ],
+        },
+      },
+    },
+    'gatsby-plugin-image',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${ __dirname }/src/assets/images`,
+      },
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'gatsby-starter-default',
+        short_name: 'starter',
+        start_url: '/',
+        background_color: '#639',
+        theme_color: '#639',
+        display: 'minimal-ui',
+        icon: 'src/assets/images/gatsby-icon.png',
+      },
+    },
+    'gatsby-plugin-gatsby-cloud',
   ],
-}
+};

@@ -1,0 +1,62 @@
+/* Blockquote */
+
+.blockquote {
+  background: var(--color-secondary-10);
+}
+
+/* Container */
+
+.container {
+  padding-top: var(--gap-56);
+  padding-bottom: var(--gap-56);
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: var(--gap-24);
+}
+
+/* Content */
+
+.content {
+  grid-column: 7 / 11;
+  align-self: center;
+
+  margin: 0;
+
+  font-family: var(--ff-display);
+  font-size: var(--fs-blockquote);
+  font-style: italic;
+  line-height: var(--lh-blockquote);
+}
+
+/* Footer */
+
+.footer {
+  margin-top: var(--gap-32);
+}
+
+.footer:before {
+  content: '';
+
+  margin-bottom: var(--gap-16);
+
+  display: block;
+  width: 3.5rem;
+  height: 3px;
+  background: var(--color-accent);
+}
+
+/* Author */
+
+.author {
+  font-family: var(--ff-base);
+  font-style: normal;
+  font-size: var(--fs-text);
+  line-height: 1;
+}
+
+/* Picture */
+
+.picture {
+  grid-column: 3 / 6;
+}

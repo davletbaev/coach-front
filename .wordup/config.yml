@@ -1,0 +1,34 @@
+# For Frontity you only need the local WordPress
+# installation. Because you don't develop a theme
+# or plugin in a classic way
+type: installation
+
+# The internal project name
+projectName: coach-webapp
+
+# The slug of your installation
+slug: coach-webpapp
+
+# The relative folder where the wp-content folder will be located
+srcFolder: wp-content
+
+# The localhost port of your WP server
+port: 9000
+
+# WordPress installation config
+wpInstall:
+  # Title of the WordPress installation
+  title: coach-webapp
+
+  # WordPress users with role
+  users:
+    - name: admin
+      password: 123456
+      email: davletbaev.rm@gmail.com
+      role: administrator
+
+  # Plugins you need for your project
+  plugins: {}
+
+  # Themes you need for your project
+  themes: {}

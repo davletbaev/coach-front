@@ -1,7 +1,16 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/ssr-apis/
- */
+import Layout from './src/components/Layout';
 
-// You can delete this file if you're not using it
+const React = require('react');
+const PropTypes = require('prop-types');
+
+export const wrapPageElement = ({ element }) => {
+  return (
+    <Layout>
+      { element }
+    </Layout>
+  );
+};
+
+wrapPageElement.propTypes = {
+  element: PropTypes.node.isRequired,
+};

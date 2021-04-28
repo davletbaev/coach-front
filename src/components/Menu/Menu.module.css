@@ -1,0 +1,152 @@
+/* Menu */
+
+.menu {
+  display: grid;
+}
+
+@media (min-width: 736px) {
+  .menu {
+    height: 100%;
+    align-items: center;
+  }
+}
+
+/* Toggle */
+
+@media (max-width: 736px) {
+  .toggle {
+    z-index: 1001;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    justify-self: end;
+  }
+}
+
+@media (min-width: 736px) {
+  .toggle {
+    display: none;
+  }
+}
+
+/* Toggle Icon */
+
+@media (max-width: 736px) {
+  .toggle-icon {
+    display: block;
+  }
+
+  .toggle-icon:hover {
+    color: var(--color-primary-50);
+  }
+}
+
+/* Wrapper */
+
+@media (max-width: 736px) {
+  .wrapper {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+    grid-gap: var(--gap-56);
+    padding: var(--gap-24) var(--gap-16) var(--gap-40);
+    background-color: var(--color-secondary-10);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: visibility 0.15s linear, opacity 0.15s linear;
+  }
+
+  .wrapper-open {
+    composes: wrapper;
+
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 736px) {
+  .wrapper {
+    height: 100%;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: var(--gap-32);
+  }
+}
+
+/* Nav */
+
+.nav {
+  display: grid;
+
+  align-self: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 736px) {
+  .nav {
+    height: 100%;
+
+    grid-auto-flow: column;
+  }
+}
+
+/* Nav Item */
+
+.nav-item {
+  font-family: var(--ff-display);
+}
+
+@media (max-width: 736px) {
+  .nav-item {
+    font-size: var(--fs-h3);
+  }
+}
+
+@media (min-width: 736px) {
+  .nav-item {
+    height: 100%;
+    font-size: var(--fs-h5);
+  }
+}
+
+/* Nav Link */
+
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0.5rem;
+}
+
+.nav-link-current {
+  composes: nav-link;
+
+  font-style: italic;
+}
+
+@media (min-width: 736px) {
+  .nav-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    padding: 0 var(--gap-16);
+  }
+}

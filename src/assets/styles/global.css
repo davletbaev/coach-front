@@ -1,0 +1,122 @@
+:root {
+  --ff-base: 'Open Sans', Arial, sans-serif;
+  --ff-display: 'Playfair Display', Georgia, serif;
+
+  --fs-base: 100%;
+
+  --fs-text: 1rem;
+  --fs-h1: 3.25rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 2rem;
+  --fs-h4: 1.25rem;
+  --fs-h5: var(--fs-text);
+  --fs-subheading: 2rem;
+  --fs-blockquote: 1.25rem;
+  --fs-caption: 0.75rem;
+  --fs-button: 0.75rem;
+
+  --lh-text: 1.5rem;
+  --lh-h1: 3.5rem;
+  --lh-h2: 2.5rem;
+  --lh-h3: 2.5rem;
+  --lh-h4: 1.5rem;
+  --lh-h5: var(--lh-text);
+  --lh-subheading: 3rem;
+  --lh-blockquote: 2rem;
+  --lh-caption: 1rem;
+  --lh-button: 1rem;
+
+  --color-white: #fff;
+  --color-gray-30: #5f5d5d;
+  --color-black: #280b19;
+
+  --color-black-rgb: 40, 11, 25;
+
+  --color-accent: #ee932c;
+
+  --color-primary-20: #e5cfd9;
+  --color-primary-40: #a35679;
+  --color-primary-50: #813f5e;
+  --color-primary-70: #571434;
+  --color-primary-90: #523341;
+
+  --color-secondary-0: #fcf1e6;
+  --color-secondary-10: #f6e1ce;
+  --color-secondary-20: #f5dcc5;
+  --color-secondary-20-rgb: 245, 220, 197;
+
+  --color-danger-20: #DA5B5B;
+  --color-danger-30: #BE3535;
+
+  --color-success-20: #49CD6E;
+  --color-success-30: #24B64D;
+  --color-success-40: #109A37;
+
+  --gap-4: 0.25rem;
+  --gap-8: 0.5rem;
+  --gap-16: 1rem;
+  --gap-24: 1.5rem;
+  --gap-32: 2rem;
+  --gap-40: 2.5rem;
+  --gap-56: 3.5rem;
+  --gap-80: 5rem;
+  --gap-120: 7.5rem;
+}
+
+html {
+  font-size: var(--fs-base);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  font-size: var(--fs-text);
+  line-height: var(--lh-text);
+  font-family: var(--ff-base);
+  font-weight: 400;
+
+  background: var(--color-secondary-0);
+  color: var(--color-black);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:after,
+*:before {
+  font-family: inherit;
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-primary-50);
+}
+
+.visually-hidden {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px, 1px, 1px, 1px); /*maybe deprecated but we need to support legacy browsers */
+  clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
+  white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+}

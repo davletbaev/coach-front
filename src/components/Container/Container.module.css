@@ -1,0 +1,28 @@
+/* Container */
+
+.container {
+  padding-left: var(--gap-16);
+  padding-right: var(--gap-16);
+}
+
+@media (min-width: 736px) {
+  .container {
+    padding-left: var(--gap-24);
+    padding-right: var(--gap-24);
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: var(--gap-56);
+    padding-right: var(--gap-56);
+  }
+}
+
+@media (min-width: 1900px) {
+  .container {
+    max-width: 1440px;
+  }
+}

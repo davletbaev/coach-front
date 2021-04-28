@@ -1,0 +1,64 @@
+/* Button */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--ff-base);
+  font-size: var(--fs-button);
+  font-weight: bold;
+
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  padding: 0;
+  border: 0;
+  background: none;
+
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Primary */
+
+.primary {
+  height: 3rem;
+  padding: 0 var(--gap-24);
+
+  color: var(--color-white);
+  background-color: var(--color-accent);
+
+  border-radius: 0.5rem;
+}
+
+/* Secondary */
+
+.secondary {
+  color: var(--color-primary-50);
+}
+
+.secondary .inner {
+  border-bottom: 2px solid var(--color-primary-50);
+}
+
+/* Inner */
+
+.inner {
+  padding: 0.15rem 0;
+}
+
+/* Icon */
+.icon {
+  margin-left: var(--gap-8);
+  margin-bottom: -0.25rem;
+  margin-top: -0.25rem;
+  width: 1em;
+  height: 1em;
+  fill: none;
+  font-size: 1.8rem;
+}

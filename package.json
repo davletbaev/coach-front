@@ -77,7 +77,6 @@
     "~pages": "src/pages",
     "~components": "src/components",
     "~shared": "src/shared",
-    "~store": "src/store",
     "~assets": "src/assets"
   }
 }

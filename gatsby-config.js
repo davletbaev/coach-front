@@ -12,7 +12,7 @@ module.exports = {
       options: {
         url:
           process.env.WPGRAPHQL_URL ||
-          'http://localhost:9000/graphql',
+          'http://davletbaev.space/graphql',
         schema: {
           typePrefix: 'Wp',
         },

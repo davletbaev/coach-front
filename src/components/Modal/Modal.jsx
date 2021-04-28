@@ -1,6 +1,5 @@
 import React, { useImperativeHandle, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import dialogPolyfill from 'dialog-polyfill';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
@@ -16,12 +15,19 @@ const Modal = React.forwardRef(({
 }, ref) => {
   const dialogRef = useRef();
   const [ isOpen, setOpen ] = useState(false);
+  const polyfillRef = useRef();
+
+  if (typeof window !== 'undefined') {
+    import('dialog-polyfill').then((dialogPolyfill) => {
+      polyfillRef.current = dialogPolyfill;
+    });
+  }
 
   const open = () => {
     setOpen(true);
 
     setTimeout(() => {
-      dialogPolyfill.registerDialog(dialogRef.current);
+      polyfillRef.current?.registerDialog(dialogRef.current);
       dialogRef.current.showModal();
     }, 0);
 

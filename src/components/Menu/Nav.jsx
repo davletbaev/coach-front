@@ -8,13 +8,9 @@ const Nav = () => {
 
     const targetId = e.target.getAttribute('href').slice(1);
 
-    console.log(targetId);
-
     const target = document.getElementById(targetId);
 
-    console.log(target);
-
-    window.scrollTo({
+    typeof window !== 'undefined' && window.scrollTo({
       top: target.offsetTop,
       behavior: 'smooth',
     });

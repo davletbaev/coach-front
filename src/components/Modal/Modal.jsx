@@ -15,21 +15,16 @@ const Modal = React.forwardRef(({
 }, ref) => {
   const dialogRef = useRef();
   const [ isOpen, setOpen ] = useState(false);
-  const polyfillRef = useRef();
-
-  if (typeof window !== 'undefined') {
-    import('dialog-polyfill').then((dialogPolyfill) => {
-      polyfillRef.current = dialogPolyfill;
-    });
-  }
 
   const open = () => {
     setOpen(true);
 
-    setTimeout(() => {
-      polyfillRef.current?.registerDialog(dialogRef.current);
-      dialogRef.current.showModal();
-    }, 0);
+    if (typeof window !== 'undefined') {
+      import('dialog-polyfill').then((dialogPolyfill) => {
+        dialogPolyfill.default.registerDialog(dialogRef.current);
+        dialogRef.current.showModal();
+      });
+    }
 
     typeof onOpen === 'function' && onOpen();
   };

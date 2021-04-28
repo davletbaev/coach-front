@@ -12,7 +12,7 @@ const Socials = () => (
     <li className={ styles.item }>
       <a
         className={ styles.link }
-        href="https://facebook.com"
+        href="https://www.facebook.com/psy2biz1/"
         target="_blank"
         title="Facebook"
         aria-label="Facebook"
@@ -29,7 +29,7 @@ const Socials = () => (
     <li className={ styles.item }>
       <a
         className={ styles.link }
-        href="https://vk.com"
+        href="https://vk.com/psy2biz"
         target="_blank"
         title="ВКонтакте"
         aria-label="ВКонтакте"
@@ -46,7 +46,7 @@ const Socials = () => (
     <li className={ styles.item }>
       <a
         className={ styles.link }
-        href="https://instagram.com"
+        href="https://www.instagram.com/psy2biz/"
         target="_blank"
         title="Instagram"
         aria-label="Instagram"

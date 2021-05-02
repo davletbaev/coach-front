@@ -48,6 +48,7 @@
 @media (max-width: 736px) {
   .wrapper {
     height: 100vh;
+    height: -webkit-fill-available;
 
     display: grid;
     grid-template-rows: 1fr auto;

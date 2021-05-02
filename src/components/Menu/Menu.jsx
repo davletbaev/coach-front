@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Socials from '../Socials';
 
@@ -13,6 +13,21 @@ const Menu = () => {
   const toggleMenu = () => setOpen(!isOpen);
 
   const handleNavigate = () => setOpen(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const appHeight = () => {
+      document.documentElement.style.setProperty('--app-height', `${ window.innerHeight }px`);
+    };
+
+    window.addEventListener('resize', appHeight);
+    appHeight();
+
+    return () => {
+      document.removeEventListener('resize', appHeight);
+    };
+  }, []);
 
   return (
     <nav className={ styles.menu }>

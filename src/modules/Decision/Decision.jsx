@@ -14,26 +14,24 @@ const Decision = () => (
   >
     <h2 className={ styles.heading }>Прими решение<br /> и измени свою жизнь!</h2>
 
-    <div className={ styles.left }>
-      <StaticImage
-        className={ styles.picture }
-        quality="90"
-        layout="constrained"
-        transformOptions={
-          {
-            cropFocus: 'center',
-          }
+    <StaticImage
+      className={ styles.picture }
+      quality="90"
+      layout="constrained"
+      transformOptions={
+        {
+          cropFocus: 'center',
         }
-        width={ 320 }
-        height={ 375 }
-        src="./decision.jpg"
-        formats={ [ 'auto', 'webp', 'avif' ] }
-        placeholder="blurred"
-        alt=""
-      />
+      }
+      width={ 320 }
+      height={ 375 }
+      src="./decision.jpg"
+      formats={ [ 'auto', 'webp', 'avif' ] }
+      placeholder="blurred"
+      alt=""
+    />
 
-      <p className={ styles.caption }>Я — тот, кто тебе нужен, если</p>
-    </div>
+    <p className={ styles.caption }>Я — тот, кто тебе нужен, если</p>
 
     <div className={ styles.right }>
       <ul>

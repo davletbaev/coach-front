@@ -62,7 +62,6 @@
 
 .text a {
   margin-left: var(--gap-8);
-  white-space: nowrap;
 }
 
 /* Icon */

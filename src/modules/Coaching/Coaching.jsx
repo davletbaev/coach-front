@@ -4,17 +4,23 @@ import PropTypes from 'prop-types';
 
 import Container from '~components/Container';
 
+import useCarousel from '../Reviews/useCarousel';
+
 import Product from './Product';
 
 import * as styles from './Coaching.module.css';
 
 const Coaching = ({ products }) => {
-  const renderProducts = products.map((item) => (
+  const { carouselRef } = useCarousel();
+
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 736;
+
+  const renderProducts = products.map((item, index, arr) => (
     <Fragment key={ item.id }>
       <li className={ styles.tariffsItem }>
         <Product{ ...item } />
       </li>
-      <div className={ styles.tariffsDivider } />
+      { index < arr.length - 1 && <div className={ styles.tariffsDivider } /> }
     </Fragment>
   ));
 
@@ -63,9 +69,16 @@ const Coaching = ({ products }) => {
         </div>
       </dl>
 
-      <ul className={ styles.tariffs }>
-        { renderProducts }
-      </ul>
+      <div
+        ref={ isMobile ? carouselRef : undefined }
+        className={ styles.carousel }
+      >
+        <ul
+          className={ styles.tariffs }
+        >
+          { renderProducts }
+        </ul>
+      </div>
     </Container>
   );
 };

@@ -4,14 +4,28 @@
   position: relative;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--gap-16) var(--gap-24);
+}
+
+@media (max-width: 736px) {
+  .form {
+    width: 100%;
+    grid-auto-flow: row;
+  }
+}
+
+@media (min-width: 736px) {
+  .form {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Group */
 
-.group {
-  grid-column: span 3;
+@media (min-width: 736px) {
+  .group {
+    grid-column: span 3;
+  }
 }
 
 /* Button */
@@ -47,14 +61,24 @@
 /* Modal */
 
 .modal {
-  width: 30rem;
-
-  padding: var(--gap-32);
-
   background: var(--color-secondary-20);
 
   box-shadow: 3px 3px 12px rgba(0, 0, 0, .08), 13px 13px 30px rgba(0, 0, 0, .16);
   border-radius: 1rem;
+}
+
+@media (max-width: 736px) {
+  .modal {
+    padding: var(--gap-24);
+  }
+}
+
+@media (min-width: 736px) {
+  .modal {
+    width: 30rem;
+
+    padding: var(--gap-32);
+  }
 }
 
 .modal-heading {
@@ -68,14 +92,16 @@
 
 /* Layout */
 
-.inline-layout .button {
-  grid-column: span 2;
-}
-
-.modal-layout .button {
-  grid-column: span 3;
-}
-
 .modal-layout .response {
   position: static;
+}
+
+@media (min-width: 736px) {
+  .inline-layout .button {
+    grid-column: span 2;
+  }
+
+  .modal-layout .button {
+    grid-column: span 3;
+  }
 }

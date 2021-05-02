@@ -70,6 +70,11 @@ const Cover = () => (
             layout="constrained"
             src="./cover.jpg"
             formats={ [ 'auto', 'webp', 'avif' ] }
+            transformOptions={
+              {
+                cropFocus: 'right',
+              }
+            }
             placeholder="blurred"
             alt=""
           />

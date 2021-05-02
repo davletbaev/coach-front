@@ -12,16 +12,32 @@
   cursor: zoom-out;
 }
 
-.cross {
-  position: absolute;
-  left: calc(100% + 1rem);
-  bottom: calc(100% + 1rem);
-  border: 0;
-  background: none;
-  color: white;
-  cursor: pointer;
+@media (max-width: 736px) {
+  .modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
-.icon {
-  fill: currentColor;
+@media (max-width: 736px) {
+  .cross {
+    display: none;
+  }
+}
+
+@media (min-width: 736px) {
+  .cross {
+    position: absolute;
+    left: calc(100% + 1rem);
+    bottom: calc(100% + 1rem);
+    border: 0;
+    background: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .icon {
+    fill: currentColor;
+  }
 }

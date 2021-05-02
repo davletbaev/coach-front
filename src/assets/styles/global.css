@@ -5,23 +5,23 @@
   --fs-base: 100%;
 
   --fs-text: 1rem;
-  --fs-h1: 3.25rem;
-  --fs-h2: 2.25rem;
-  --fs-h3: 2rem;
+  --fs-h1: 2.5rem;
+  --fs-h2: 1.75rem;
+  --fs-h3: 1.5rem;
   --fs-h4: 1.25rem;
   --fs-h5: var(--fs-text);
-  --fs-subheading: 2rem;
+  --fs-subheading: 1.25rem;
   --fs-blockquote: 1.25rem;
   --fs-caption: 0.75rem;
   --fs-button: 0.75rem;
 
   --lh-text: 1.5rem;
-  --lh-h1: 3.5rem;
-  --lh-h2: 2.5rem;
-  --lh-h3: 2.5rem;
+  --lh-h1: 3rem;
+  --lh-h2: 2rem;
+  --lh-h3: 2rem;
   --lh-h4: 1.5rem;
   --lh-h5: var(--lh-text);
-  --lh-subheading: 3rem;
+  --lh-subheading: 2rem;
   --lh-blockquote: 2rem;
   --lh-caption: 1rem;
   --lh-button: 1rem;
@@ -63,6 +63,22 @@
   --gap-120: 7.5rem;
 }
 
+@media (min-width: 736px) {
+  :root {
+    --fs-h1: 3.25rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 2rem;
+    --fs-subheading: 2rem;
+    --fs-blockquote: 1.25rem;
+
+    --lh-h1: 3.5rem;
+    --lh-h2: 2.5rem;
+    --lh-h3: 2.5rem;
+    --lh-subheading: 3rem;
+    --lh-blockquote: 2rem;
+  }
+}
+
 html {
   font-size: var(--fs-base);
   height: 100%;
@@ -86,6 +102,8 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
 }
 
 *,

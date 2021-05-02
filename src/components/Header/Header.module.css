@@ -10,6 +10,12 @@
   height: 3.5rem;
 }
 
+@media (max-width: 736px) {
+  .header {
+    background: var(--color-secondary-20);
+  }
+}
+
 .header-scrolled {
   composes: header;
 
@@ -61,6 +67,7 @@
 @media (max-width: 736px) {
   .logo {
     z-index: 1001;
+    justify-self: start;
   }
 }
 

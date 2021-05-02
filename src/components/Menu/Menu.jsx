@@ -12,6 +12,8 @@ const Menu = () => {
 
   const toggleMenu = () => setOpen(!isOpen);
 
+  const handleNavigate = () => setOpen(false);
+
   return (
     <nav className={ styles.menu }>
       <Toggle
@@ -23,7 +25,7 @@ const Menu = () => {
         className={ styles[isOpen ? 'wrapperOpen' : 'wrapper'] }
         id="menu__wrapper"
       >
-        <Nav />
+        <Nav onNavigate={ handleNavigate } />
 
         <Socials />
       </div>

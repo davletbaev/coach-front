@@ -2,11 +2,11 @@
 
 .menu {
   display: grid;
+  height: 100%;
 }
 
 @media (min-width: 736px) {
   .menu {
-    height: 100%;
     align-items: center;
   }
 }
@@ -47,6 +47,8 @@
 
 @media (max-width: 736px) {
   .wrapper {
+    height: 100vh;
+
     display: grid;
     grid-template-rows: 1fr auto;
     justify-items: center;
@@ -54,7 +56,7 @@
     padding: var(--gap-24) var(--gap-16) var(--gap-40);
     background-color: var(--color-secondary-10);
 
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -94,6 +96,12 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+@media (max-width: 736px) {
+  .nav {
+    grid-gap: var(--gap-32);
+  }
 }
 
 @media (min-width: 736px) {

@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import * as styles from './Menu.module.css';
 
-const Nav = () => {
+const Nav = ({ onNavigate }) => {
   const navigate = (e) => {
     e.preventDefault();
 
@@ -14,6 +15,8 @@ const Nav = () => {
       top: target.offsetTop,
       behavior: 'smooth',
     });
+
+    onNavigate();
   };
 
   return (
@@ -43,6 +46,15 @@ const Nav = () => {
       </li>
     </ul>
   );
+};
+
+Nav.propTypes = {
+  onNavigate: PropTypes.func,
+};
+
+Nav.defaultProps = {
+  onNavigate: () => {
+  },
 };
 
 export default Nav;

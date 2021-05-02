@@ -1,6 +1,10 @@
 /* Modal */
 
 .modal {
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+
   padding: 0;
   background: none;
   border: 0;
@@ -8,6 +12,11 @@
 }
 
 .modal::backdrop {
+  background: rgba(0, 0, 0, .6);
+  cursor: zoom-out;
+}
+
+.modal ~ :global(.backdrop) {
   background: rgba(0, 0, 0, .6);
   cursor: zoom-out;
 }

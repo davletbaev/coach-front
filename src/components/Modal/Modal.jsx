@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 
+import 'dialog-polyfill/dialog-polyfill.css';
+
 import * as styles from './Modal.module.css';
 
 const Modal = React.forwardRef(({

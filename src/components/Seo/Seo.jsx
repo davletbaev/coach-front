@@ -16,6 +16,7 @@ function Seo({
             title
             description
             author
+            preview
           }
         }
       }

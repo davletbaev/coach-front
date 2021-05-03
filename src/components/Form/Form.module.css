@@ -3,18 +3,19 @@
 .form {
   position: relative;
 
+  max-width: 26rem;
   display: grid;
   grid-gap: var(--gap-16) var(--gap-24);
 }
 
-@media (max-width: 736px) {
+@media (max-width: 900px) {
   .form {
     width: 100%;
     grid-auto-flow: row;
   }
 }
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   .form {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -22,7 +23,7 @@
 
 /* Group */
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   .group {
     grid-column: span 3;
   }
@@ -67,13 +68,13 @@
   border-radius: 1rem;
 }
 
-@media (max-width: 736px) {
+@media (max-width: 900px) {
   .modal {
     padding: var(--gap-24);
   }
 }
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   .modal {
     width: 30rem;
 
@@ -96,7 +97,7 @@
   position: static;
 }
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   .inline-layout .button {
     grid-column: span 2;
   }

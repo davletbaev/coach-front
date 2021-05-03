@@ -4,7 +4,7 @@
   display: grid;
 }
 
-@media (max-width: 736px) {
+@media (max-width: 900px) {
   .session {
     padding-top: var(--gap-80);
     padding-bottom: var(--gap-80);
@@ -13,7 +13,7 @@
   }
 }
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   .session {
     padding-top: var(--gap-120);
     padding-bottom: var(--gap-120);
@@ -33,7 +33,7 @@
   line-height: var(--lh-h4);
 }
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   .heading {
     grid-column: 1 / 4;
     justify-self: end;
@@ -55,7 +55,7 @@
   counter-reset: step;
 }
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   .list {
     grid-column: 5 / 13;
 

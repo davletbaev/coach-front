@@ -45,7 +45,6 @@ const Statistics = () => (
       layout="constrained"
       src="./statistics.jpg"
       aspectRatio={ 320 / 423 }
-      width={ 320 }
       formats={ [ 'auto', 'webp', 'avif' ] }
       placeholder="blurred"
       alt=""

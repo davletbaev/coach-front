@@ -4,7 +4,7 @@
   display: grid;
 }
 
-@media (max-width: 736px) {
+@media (max-width: 900px) {
   .reviews {
     padding-top: var(--gap-80);
     padding-bottom: var(--gap-80);
@@ -14,7 +14,7 @@
   }
 }
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   .reviews {
     padding-top: var(--gap-120);
     padding-bottom: var(--gap-120);
@@ -106,14 +106,14 @@
   align-items: flex-start;
 }
 
-@media (max-width: 736px) {
+@media (max-width: 900px) {
   .embla-container {
-    grid-auto-columns: 70vw;
+    grid-auto-columns: 20rem;
     grid-gap: var(--gap-16);
   }
 }
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   .embla-container {
     grid-auto-columns: calc((100% - var(--gap-24) * 3) / 4);
     grid-gap: var(--gap-24);

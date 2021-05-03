@@ -5,10 +5,17 @@
   padding-right: var(--gap-16);
 }
 
-@media (min-width: 736px) {
+@media (min-width: 600px) {
   .container {
     padding-left: var(--gap-24);
     padding-right: var(--gap-24);
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding-left: var(--gap-32);
+    padding-right: var(--gap-32);
   }
 }
 

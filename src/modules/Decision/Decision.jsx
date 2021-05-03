@@ -23,8 +23,6 @@ const Decision = () => (
           cropFocus: 'center',
         }
       }
-      width={ 320 }
-      height={ 375 }
       src="./decision.jpg"
       formats={ [ 'auto', 'webp', 'avif' ] }
       placeholder="blurred"

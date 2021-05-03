@@ -21,7 +21,7 @@
   cursor: zoom-out;
 }
 
-@media (max-width: 736px) {
+@media (max-width: 900px) {
   .modal {
     display: flex;
     align-items: center;
@@ -29,13 +29,13 @@
   }
 }
 
-@media (max-width: 736px) {
+@media (max-width: 900px) {
   .cross {
     display: none;
   }
 }
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   .cross {
     position: absolute;
     left: calc(100% + 1rem);

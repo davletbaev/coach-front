@@ -15,14 +15,14 @@
   padding-bottom: var(--gap-24);
 }
 
-@media (max-width: 736px) {
+@media (max-width: 900px) {
   .container {
     grid-auto-flow: row;
     grid-gap: var(--gap-16);
   }
 }
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   .container {
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
@@ -32,14 +32,14 @@
 
 /* Socials */
 
-@media (max-width: 736px) {
+@media (max-width: 900px) {
   .socials {
     order: -1;
     margin-left: -0.75rem;
   }
 }
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   .socials {
     justify-self: end;
   }
@@ -55,7 +55,7 @@
 
 /* Copyright */
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   .copyright {
     justify-self: center;
   }

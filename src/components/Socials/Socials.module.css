@@ -11,7 +11,7 @@
   list-style: none;
 }
 
-@media (max-width: 736px) {
+@media (max-width: 900px) {
   .socials {
     grid-auto-columns: min-content;
     align-self: end;
@@ -43,7 +43,7 @@
   fill: currentColor;
 }
 
-@media (max-width: 736px) {
+@media (max-width: 900px) {
   .icon {
     width: 2.5rem;
     height: 2.5rem;

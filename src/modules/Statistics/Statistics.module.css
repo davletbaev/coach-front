@@ -4,17 +4,28 @@
   display: grid;
 }
 
-@media (max-width: 736px) {
+@media (max-width: 600px) {
   .statistics {
-    padding-top: var(--gap-80);
-    padding-bottom: var(--gap-80);
-
     grid-auto-flow: row;
     grid-gap: var(--gap-56);
   }
 }
 
-@media (min-width: 736px) {
+@media (max-width: 900px) {
+  .statistics {
+    padding-top: var(--gap-80);
+    padding-bottom: var(--gap-80);
+  }
+}
+
+@media (min-width: 600px) {
+  .statistics {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: var(--gap-80) var(--gap-24);
+  }
+}
+
+@media (min-width: 900px) {
   .statistics {
     padding-top: var(--gap-120);
     padding-bottom: var(--gap-120);
@@ -34,28 +45,38 @@
   list-style: none;
 }
 
-@media (max-width: 736px) {
+@media (max-width: 900px) {
   .facts-list {
     max-width: 70%;
     grid-gap: var(--gap-32);
   }
 }
 
-@media (min-width: 736px) {
+@media (min-width: 500px) {
+  .facts-list {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 600px) {
   .facts-list {
     grid-gap: var(--gap-24);
-    grid-column: span 12;
+    grid-column: span 2;
     grid-row: 1 / 2;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
   }
 }
 
-/* Fact */
-
-.fact {
-
+@media (min-width: 900px) {
+  .facts-list {
+    grid-column: span 12;
+  }
 }
+
+/* Fact */
 
 .fact-num {
   margin: 0;
@@ -81,9 +102,6 @@
 
 /* Content */
 
-.content {
-}
-
 .content h2 {
   margin-top: 0;
   margin-bottom: var(--gap-24);
@@ -105,17 +123,18 @@
   margin-top: var(--gap-32);
 }
 
-@media (max-width: 736px) {
+@media (min-width: 600px) {
   .content {
+    align-self: center;
 
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
   }
 }
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   .content {
-    align-self: center;
     grid-column: 2 / 8;
-    grid-row: 2 / 3;
   }
 }
 
@@ -126,16 +145,22 @@
   overflow: visible;
 }
 
-@media (max-width: 736px) {
+@media (max-width: 600px) {
   .picture {
     order: -1;
   }
 }
 
-@media (min-width: 736px) {
+@media (min-width: 600px) {
+  .picture {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+}
+
+@media (min-width: 900px) {
   .picture {
     grid-column: 9 / 12;
-    grid-row: 2 / 3;
   }
 
 

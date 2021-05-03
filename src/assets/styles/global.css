@@ -63,7 +63,7 @@
   --gap-120: 7.5rem;
 }
 
-@media (min-width: 736px) {
+@media (min-width: 900px) {
   :root {
     --fs-h1: 3.25rem;
     --fs-h2: 2.25rem;

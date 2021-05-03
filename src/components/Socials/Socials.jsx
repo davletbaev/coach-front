@@ -1,66 +1,60 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import Icon from '../Icon';
 
 import * as styles from './Socials.module.css';
 
-const Socials = () => (
-  <ul
-    className={ styles.socials }
-    id="socials"
-  >
+const Socials = () => {
+
+  const { allWpMenu } = useStaticQuery(graphql`
+      query SocialsMenu {
+        allWpMenu {
+          nodes {
+            menuItems {
+              nodes {
+                path
+                title
+                url
+                label
+              }
+            }
+            locations
+          }
+        }
+      }
+    `);
+
+  const socialsMenu = allWpMenu.nodes.find((item) => item.locations.includes('GATSBY_FOOTER_MENU'));
+
+  const renderItems = socialsMenu.menuItems.nodes.map((item) => (
     <li className={ styles.item }>
       <a
         className={ styles.link }
-        href="https://www.facebook.com/psy2biz1/"
+        href={ item.path }
         target="_blank"
-        title="Facebook"
-        aria-label="Facebook"
+        title={ item.title }
+        aria-label={ item.title }
         rel="noreferrer"
       >
         <Icon
           className={ styles.icon }
           width="32"
           height="32"
-          icon="facebook"
+          icon={ item.label }
         />
       </a>
     </li>
-    <li className={ styles.item }>
-      <a
-        className={ styles.link }
-        href="https://vk.com/psy2biz"
-        target="_blank"
-        title="ВКонтакте"
-        aria-label="ВКонтакте"
-        rel="noreferrer"
-      >
-        <Icon
-          className={ styles.icon }
-          width="32"
-          height="32"
-          icon="vk"
-        />
-      </a>
-    </li>
-    <li className={ styles.item }>
-      <a
-        className={ styles.link }
-        href="https://www.instagram.com/psy2biz/"
-        target="_blank"
-        title="Instagram"
-        aria-label="Instagram"
-        rel="noreferrer"
-      >
-        <Icon
-          className={ styles.icon }
-          width="32"
-          height="32"
-          icon="instagram"
-        />
-      </a>
-    </li>
-  </ul>
-);
+  ));
+
+  return (
+    <ul
+      className={ styles.socials }
+      id="socials"
+    >
+      { renderItems }
+    </ul>
+  );
+};
 
 export default Socials;

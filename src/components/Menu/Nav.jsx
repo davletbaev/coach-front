@@ -1,9 +1,29 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import * as styles from './Menu.module.css';
 
 const Nav = ({ onNavigate }) => {
+  const { allWpMenu } = useStaticQuery(graphql`
+      query MainMenu {
+        allWpMenu {
+          nodes {
+            menuItems {
+              nodes {
+                path
+                url
+                label
+              }
+            }
+            locations
+          }
+        }
+      }
+    `);
+
+  const mainMenu = allWpMenu.nodes.find((item) => item.locations.includes('GATSBY_HEADER_MENU'));
+
   const navigate = (e) => {
     e.preventDefault();
 
@@ -19,31 +39,21 @@ const Nav = ({ onNavigate }) => {
     onNavigate();
   };
 
+  const renderItems = mainMenu.menuItems.nodes.map((item) => (
+    <li className={ styles.navItem }>
+      <a
+        href={ item.path }
+        className={ styles.navLink }
+        onClick={ navigate }
+      >{ item.label }</a>
+    </li>
+  ));
+
   return (
     <ul
       className={ styles.nav }
     >
-      <li className={ styles.navItem }>
-        <a
-          href="#about"
-          className={ styles.navLink }
-          onClick={ navigate }
-        >Обо мне</a>
-      </li>
-      <li className={ styles.navItem }>
-        <a
-          href="#reviews"
-          className={ styles.navLink }
-          onClick={ navigate }
-        >Отзывы</a>
-      </li>
-      <li className={ styles.navItem }>
-        <a
-          href="#coaching"
-          className={ styles.navLink }
-          onClick={ navigate }
-        >Коучинг</a>
-      </li>
+      { renderItems }
     </ul>
   );
 };

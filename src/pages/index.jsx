@@ -20,7 +20,7 @@ import '~assets/styles/global.css';
 
 const IndexPage = ({ data }) => (
   <>
-    <Seo title="Home" />
+    <Seo { ...data.allWp.nodes[0].generalSettings } />
     <Cover />
     <About />
     <Decision />
@@ -37,6 +37,14 @@ const IndexPage = ({ data }) => (
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
+    allWp: PropTypes.shape({
+      nodes: PropTypes.arrayOf(PropTypes.shape({
+        generalSettings: PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          description: PropTypes.string.isRequired,
+        }).isRequired,
+      })).isRequired,
+    }).isRequired,
     allWpReview: PropTypes.shape({
       nodes: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string.isRequired,
@@ -63,7 +71,16 @@ IndexPage.propTypes = {
 };
 
 export const query = graphql`
- query Reviews {
+ query WP_DATA {
+ allWp {
+    nodes {
+      generalSettings {
+        title
+        url
+        description
+      }
+    }
+  }
   allWpReview {
     nodes {
       reviewData {

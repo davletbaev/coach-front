@@ -22,7 +22,7 @@ function Seo({
     `);
 
   const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
+  const metaTitle = title || site.siteMetadata?.title;
 
   return (
     <Helmet
@@ -31,8 +31,8 @@ function Seo({
           lang,
         }
       }
-      title={ title }
-      titleTemplate={ defaultTitle ? `%s | ${ defaultTitle }` : null }
+      title={ metaTitle }
+      titleTemplate={ `%s | ${ metaDescription }` }
       meta={
         [
           {
@@ -41,7 +41,7 @@ function Seo({
           },
           {
             property: 'og:title',
-            content: title,
+            content: metaTitle,
           },
           {
             property: 'og:description',
@@ -52,8 +52,16 @@ function Seo({
             content: 'website',
           },
           {
+            property: 'og:image',
+            content: site.siteMetadata.preview
+          },
+          {
+            property: 'og:image:url',
+            content: site.siteMetadata.preview
+          },
+          {
             name: 'twitter:card',
-            content: 'summary',
+            content: 'summary_large_image',
           },
           {
             name: 'twitter:creator',
@@ -61,12 +69,16 @@ function Seo({
           },
           {
             name: 'twitter:title',
-            content: title,
+            content: metaTitle,
           },
           {
             name: 'twitter:description',
             content: metaDescription,
           },
+          {
+            name: 'twitter:image',
+            content: site.siteMetadata.preview
+          }
         ].concat(meta)
       }
       link={

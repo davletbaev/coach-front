@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
-    description: 'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
-    author: '@gatsbyjs',
+    title: 'Ирина Вяткина',
+    description: 'Бизнес-психолог, тренер личностного роста, мотивационный оратор',
+    author: 'd8v.design',
+    preview: '/preview.jpg'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -59,10 +60,10 @@ module.exports = {
         name: 'gatsby-starter-default',
         short_name: 'starter',
         start_url: '/',
-        background_color: '#639',
-        theme_color: '#639',
+        background_color: '#F5DCC5',
+        theme_color: '#F5DCC5',
         display: 'minimal-ui',
-        icon: 'src/assets/images/gatsby-icon.png',
+        icon: 'src/assets/images/favicon.png',
       },
     },
     'gatsby-plugin-gatsby-cloud',

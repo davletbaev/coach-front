@@ -39,7 +39,7 @@ const Guarantees = () => (
           const d = document.documentElement;
 
           left = Math.min(d.clientWidth - node.clientWidth, left);
-          top = Math.min(d.clientHeight - node.clientHeight, top);
+          top = Math.min(d.clientHeight - node.clientHeight, top) + 5;
           left = Math.max(0, left);
           top = Math.max(0, top);
 

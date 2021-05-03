@@ -109,7 +109,18 @@
   opacity: 1 !important;
 }
 
+.tooltip:before {
+  border-bottom: 8px solid transparent !important;
+}
+
 .tooltip:after {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  top: -6px;
+  left: 50%;
+  margin-left: -8px;
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
   border-bottom-color: var(--color-secondary-20) !important;
 }
 

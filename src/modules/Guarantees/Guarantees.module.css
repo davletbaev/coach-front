@@ -96,3 +96,52 @@
 
   opacity: 0.8;
 }
+
+/* Tooltip */
+
+.tooltip {
+  padding: var(--gap-16) !important;
+  color: var(--color-black) !important;
+  background-color: var(--color-secondary-20) !important;
+}
+
+.tooltip:global(.show) {
+  opacity: 1 !important;
+}
+
+.tooltip:after {
+  border-bottom-color: var(--color-secondary-20) !important;
+}
+
+/* Tooltip Trigger */
+
+.tooltip-trigger {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+/* Tooltip Content  */
+
+.tooltip-content {
+  max-width: 20rem;
+
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+}
+
+.tooltip-content h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-size: var(--fs-caption);
+}
+
+.tooltip-content p + h5 {
+  margin-top: var(--gap-8);
+}
+
+.tooltip-content p {
+  margin-top: var(--gap-4);
+  margin-bottom: 0;
+}
